@@ -1,0 +1,17 @@
+suite:
+  name: Locators (Id/ClassName/Name/Xpath/Css)
+
+  purpose:
+   This test suite ensures a developer is able to find and locate webelements
+   using locators (Id, ClassName, Name, Xpath, Css)on web page.Selenium WebDriver
+   uses 8 locators to find the elements on web page.
+
+  requirement: IED-IUR-002.
+
+includes:
+  - case:
+    - name: xpath
+    - name: name
+    - name: css
+    - name: idlocate
+    - name: classnam

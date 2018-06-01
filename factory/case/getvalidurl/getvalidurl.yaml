@@ -1,0 +1,21 @@
+case:
+  name: Get Valid URL
+
+  purpose:
+   This test case ensures a developer is able to navigate to a valid URL\@.
+
+  requirement: IED-IUR-001
+
+  steps:
+    - confirm: The code should navigate to a valid URL.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: driver.get("http://www.google.com");
+      evidence: Starts on next line.
+
+    - confirm: The getvalidurl case executes successfully.
+      expectation: User able to navigate to a valid URL.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

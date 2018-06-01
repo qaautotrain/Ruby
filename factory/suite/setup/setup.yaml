@@ -1,0 +1,14 @@
+suite:
+  name: Required Configuration (Driver)
+
+  purpose:
+   This test suite ensures the IEDriverServer has been installed and is operational.Developer can
+   choice of how to determine which "bit-ness" to use in launching the browser depends on which
+   version of the IEDriverServer.exe is launched.The IEDriverServer executable must be downloaded
+   url="https://www.seleniumhq.org/download/" and placed in your "PATH"\@.
+
+  requirement: IED-IUR-000.
+
+includes:
+  - case:
+    - name: launch

@@ -1,0 +1,12 @@
+suite:
+  name: Navigation (Get)
+
+  purpose:
+     This test suite ensures a developer is able to navigate to a valid or invalid URL\@.
+
+  requirement: IED-IUR-001
+
+includes:
+  - case:
+    - name: getvalidurl
+    - name: getinvalidurl

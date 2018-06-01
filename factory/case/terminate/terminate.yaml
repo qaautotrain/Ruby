@@ -1,0 +1,21 @@
+case:
+  name: Terminate Browser
+
+  purpose:
+    This case ensures a developer is able to terminate a browser.
+
+  requirement: IED-IUR-005
+
+  steps:
+    - confirm: The code kills the browser instance.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: driver.quit();
+      evidence: Starts on next line.
+
+    - confirm: The terminate case executes successfully.
+      expectation: Kills the browser instance.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

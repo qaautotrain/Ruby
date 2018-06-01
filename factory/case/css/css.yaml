@@ -1,0 +1,23 @@
+case:
+  name: CSS Selector Web Element Locator
+
+  purpose:
+   This case ensures a developer is able to locate a web element using ID Locator.CSS selector makes
+   the execution of script faster compared to XPath locator.This locator is always the best way
+   to locate elements on the page.
+
+  requirement: IED-IUR-002
+
+  steps:
+    - confirm: The code performs locating a web element.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: driver.findElement(By.cssSelector("#n-mainpage-description > a")).click();
+      evidence: Starts on next line.
+
+    - confirm: The css case executes successfully.
+      expectation: User locates a web element.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

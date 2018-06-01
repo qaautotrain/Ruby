@@ -1,0 +1,25 @@
+case:
+  name: Click Action
+
+  purpose:
+   This test case ensures a developer is able to perform Clicks at the current mouse location.
+   The click event is sent to an element when the mouse pointer is over the element,
+   and the mouse button is pressed and released. The click command emulates a click
+   operation for a link, button, checkbox or radio button. It takes a locator
+   (an identifier for which HTML element the command refers to) as an argument.
+
+  requirement: IED-IUR-003
+
+  steps:
+    - confirm: The code performs Click event on a web element.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: driver.findElement(By.name("search")).sendKeys(w, Keys.ENTER);
+      evidence: Starts on next line.
+
+    - confirm: The click case executes successfully.
+      expectation: User emulates a click operation for a link, button, checkbox or radio button.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

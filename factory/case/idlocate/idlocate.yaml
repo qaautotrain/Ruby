@@ -1,0 +1,23 @@
+case:
+  name: ID Web Element Locator
+
+  purpose:
+   This case ensures a developer is able to locate a web element using ID Locator.IDs are unique
+   for each element so it is common way to locate elements using ID Locator.ID locators are the fastest
+   and safest locators out of all locators.
+
+  requirement: IED-IUR-002
+
+  steps:
+    - confirm: The code performs locating a web element.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: driver.findElement(By.id("ca-talk")).click();
+      evidence: Starts on next line.
+
+    - confirm: The id case executes successfully.
+      expectation: User locates a web element.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

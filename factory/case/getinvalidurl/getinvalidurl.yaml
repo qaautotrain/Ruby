@@ -1,0 +1,21 @@
+case:
+  name: Get Invalid URL
+
+  purpose:
+    This test case ensures a developer is able to navigate to an invalid URL\@.
+    
+  requirement: IED-IUR-001
+
+  steps:
+    - confirm: The code navigates to an invalid URL.
+      expectation: The code complies with error.
+      sudo: false
+      command: echo
+      argument: driver.get("http://www.doesnotexist.com");
+      evidence: Starts on next line.
+      
+    - confirm: The getinvalidurl case executes with failure. 
+      expectation: User gets error message.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

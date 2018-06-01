@@ -1,0 +1,25 @@
+case:
+  name: SendKeys Action
+
+  purpose:
+   This test case ensures a developer is able to use the method sendKeys.SendKeys method is
+   used to type some content into an editable field.SendKeys could be defined as sendKeys
+   is method to pass the some content or text into an editable element without replacing the previous available content.
+
+  requirement: IED-IUR-004
+
+  steps:
+    - confirm: The method type some content into an editable field.
+      expectation: The method complies without error.
+      sudo: false
+      command: echo
+      argument:
+       driver.findElement(By.id("wpName1")).sendKeys("Adam");
+       driver.findElement(By.id("wpPassword1")).sendKeys("12345");
+      evidence: Starts on next line.
+
+    - confirm: The sendkeys case executes successfully.
+      expectation: Method should to pass the some content or text into an editable element.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

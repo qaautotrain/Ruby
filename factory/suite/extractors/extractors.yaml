@@ -1,0 +1,14 @@
+suite:
+  name: Extractors (GetTitle/GetText/GetAttribute) 
+
+  purpose:
+    This test suite ensures a developer is able to extract the title, text and 
+    property value using Extractors (GetTitle, GetText, GetAttribute) from web elements on the web page.
+
+  requirement: IED-IUR-004
+
+includes:
+  - case:
+    - name: gettitle
+    - name: gettext
+    - name: getattribute

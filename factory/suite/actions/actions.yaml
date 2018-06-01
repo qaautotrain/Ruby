@@ -1,0 +1,14 @@
+suite:
+  name: Actions (Select/Click/SendKeys)
+
+  purpose:
+   This test suite ensures a developer is able to perform
+   actions (Select, Click, SendKeys) on webelements on the webpage.
+
+  requirement: IED-IUR-003
+
+includes:
+  - case:
+    - name: select
+    - name: click
+    - name: sendkeys

@@ -1,0 +1,23 @@
+case:
+  name: ClassName Web Element Locator
+
+  purpose:
+   This case ensures a developer is able to locate a web element using ClassName Locator.There may be multiple
+   elements with the same name, if we just use findElementByClassName make sure it is only one.If not the you
+   need to extend using the ClassName and it's sub elements.
+
+  requirement: IED-IUR-002
+
+  steps:
+    - confirm: The code performs locating a web element.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: driver.findElement(By.className("mw-ui-button")).click();
+      evidence: Starts on next line.
+
+    - confirm: The classname case executes successfully.
+      expectation: User locates a web element.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

@@ -1,0 +1,21 @@
+case:
+  name: Get Title Extractor
+
+  purpose:
+   This test case ensures a developer is able to get the title of current opened web page.
+
+  requirement: IED-IUR-004
+
+  steps:
+    - confirm: The code should able to get the title of current opened web page. 
+      expectation: The return type of getTitle method is String.
+      sudo: false
+      command: echo
+      argument: driver.getTitle();
+      evidence: Starts on next line.
+
+    - confirm: The gettitle case executes successfully.
+      expectation: User gets the title of current opened web page.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

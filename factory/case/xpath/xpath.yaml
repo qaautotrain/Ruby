@@ -1,0 +1,26 @@
+case:
+  name: XPath Web Element Locator
+
+  purpose:
+    This case ensures a developer is able to locate a web element using XPath Locator.
+    XPath is designed to allow the navigation of XML documents with the purpose of 
+    selecting individual elements, attributes,or some other part of an XML document for 
+    specific processing. XPath produces reliable locators but in performance wise it is
+    slower (especially in IE older versions) compared to CSS Selector.
+
+  requirement: IED-IUR-002
+
+  steps:
+    - confirm: The code performs locating a web element.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: 
+       driver.findElement(By.xpath("//*[@id="pt-login"]/a")).click();
+      evidence: Starts on next line.
+
+    - confirm: The xpath case executes successfully.
+      expectation: User locates a web element.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

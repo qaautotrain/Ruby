@@ -1,0 +1,24 @@
+case:
+  name: Get Text Extractor
+
+  purpose:
+   This test case demonstrates purpose of getText() method.User use when the maximum links, labels etc
+   in a web page are inner text which are displayed on web page for end users.This method helps retrieve,
+   read the visible text from element on the page.So user need to verify weather correct text are displayed
+   or not.It is also useful to locate proper elements while writing automation script based on visible text value.
+
+  requirement: IED-IUR-004
+
+  steps:
+    - confirm: The code should capture text value of a web element.
+      expectation: The return type of getText() method is String.
+      sudo: false
+      command: echo
+      argument: driver.findElement(By.xpath("//*[@id="userloginForm"]/form/div[1]/div/p")).getText();
+      evidence: Starts on next line.
+
+    - confirm: The gettext case executes successfully.
+      expectation: User gets visible text value of a web page.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

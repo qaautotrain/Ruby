@@ -1,0 +1,24 @@
+case:
+  name: Launch Browser
+
+  purpose:
+    This test case demonstrates a developer is able to launch the Browser.
+    The following system properties (read using System.getProperty() and set using
+    System.setProperty() in Java code or the "DpropertyName=value" command line flag)
+    are used by the InternetExplorerDriver.
+
+  requirement: IED-IUR-000
+
+  steps:
+    - confirm: The code launches a browser.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: WebDriver driver = new InternetExplorerDriver();
+      evidence: Starts on next line.
+
+    - confirm: The launch case executes successfully.
+      expectation: A browser gets kick off.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

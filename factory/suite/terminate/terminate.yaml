@@ -1,0 +1,11 @@
+suite:
+  name: Terminate (Quit)
+
+  purpose:
+   This test suite ensures a developer is able to terminate a browser using (Quit) method.
+
+  requirement: IED-IUR-005
+
+includes:
+  - case:
+    - name: terminate

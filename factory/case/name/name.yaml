@@ -1,0 +1,22 @@
+case:
+  name: Name Web Element Locator
+
+  purpose:
+   This case ensures a developer is able to locate a web element using Name Locator.User uses Name locator
+   to identify the elements on web page.Locating elements using Name is same as locating elements using ID locator.
+
+  requirement: IED-IUR-002
+
+  steps:
+    - confirm: The code performs locating a web element.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument: driver.findElement(By.name("wploginattempt")).click();
+      evidence: Starts on next line.
+
+    - confirm: The name case executes successfully.
+      expectation: User locates a web element.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.

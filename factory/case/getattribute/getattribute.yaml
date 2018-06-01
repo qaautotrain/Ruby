@@ -1,0 +1,26 @@
+case:
+  name: Get Attribute Extractor
+
+  purpose:
+   This test suite ensures a developer is able to define attribute and properties to a web element
+   to add extra meaning to it. The getAttribute is used to retrieve given attribute value.
+   During development of automation script, we need to retrieve values of attributes or properties
+   of webelement to verify test cases.This method work on specific web element.User need to call getAttribute()
+   method on it by specifying attribute for which value you require.
+
+  requirement: IED-IUR-004
+
+  steps:
+   - confirm: The code should retrieve values of attributes or properties of web element.
+     expectation: Returns the value of the given attribute as a String of the Web element.
+     sudo: false
+     command: echo
+     argument:
+      driver.findElement(By.xpath("//*[@id="userloginForm"]/form/div/div[6]/div/a")).getAttribute("href");
+     evidence: Starts on next line.
+
+   - confirm: The getproperty case executes successfully.
+     expectation: User retrieves values of attributes or properties of web element.
+     sudo: false
+     command: rspec ../../spec -e ${FILE}
+     evidence: Starts on next line.

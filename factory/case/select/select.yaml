@@ -1,0 +1,24 @@
+case:
+  name: Select Action
+
+  purpose:
+   This case ensures a developer is able to perform Select action on a webelement.Select class
+   only works with select tag.User can select multiple options.
+
+  requirement: IED-IUR-003
+
+  steps:
+    - confirm: The code performs Select event on a web element.
+      expectation: The code complies without error.
+      sudo: false
+      command: echo
+      argument:
+       Select dropdown = new Select(By.id("searchLanguage")).click());
+       dropdown.selectByValue("en");
+      evidence: Starts on next line.
+
+    - confirm: The select case executes successfully.
+      expectation: Selects the value from a drop down.
+      sudo: false
+      command: rspec ../../spec -e ${FILE}
+      evidence: Starts on next line.
